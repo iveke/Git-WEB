@@ -190,7 +190,98 @@
 // arr.sort();
 // console.log(arr);
 
-console.log('Hello world');
+// console.log('Hello world');
 
-console.log("Hi");
+// console.log("Hi");
 
+// function User ({name,age} = {}) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// User.prototype.changeAge = function (newAge){
+//     this.age = newAge;
+// }
+
+
+// const userA = new User({name:'Andrew', age:24});
+
+// console.log(userA);
+// //console.dir(User);
+
+// userA.changeAge(30);
+
+// console.log(userA);
+
+// function Product(name,price){
+// this.name = name;
+// this.price = price;
+// }
+// function Food(name,price){
+//     Product.call(this,name,price);
+//     this.category = 'food';
+// }
+
+// const myFood = new Food('cheese',5);
+// console.log(muFood);
+
+// class Car {
+//     test = 'my test';
+//     #storage = 'Artem';
+
+
+//     static autor = 'Andrew';
+
+
+//     constructor ({brand,model,price,color = 'blue'} = {} ){
+//         console.log('first run')
+//         this.brand = brand;
+//         this.model= model;
+//         this.price = price;
+//         this.color = color;
+//     }
+//     changePrice (newPrice){
+//         this.price = newPrice
+//     }
+//     myStorage(){
+//     return this.#storage;
+//     }
+// }
+
+// console.dir(Car);
+
+// const myCarA = new Car ({brand:'Audi', model:'Q3', price:35000});
+
+// console.dir(myCarA);
+
+
+// class Car {
+//     #brand;
+//     constructor({brand,model,price,color} = {}){
+//         console.log('first run');
+//         this.#brand = brand;
+//         this._model = model;
+//         this.price = price;
+//         this.color = color;
+
+//     }
+//         changePrice (newPrice){
+//         this.price = newPrice
+//     }
+
+// get brand() {
+//     return this.#brand;
+// }
+// set brand(brand){
+//     this.#brand = brand;
+// }
+// get model() {
+//     return this._model;
+// }
+// set model(_model){
+//     this.model = _model;
+// }
+
+
+    
+// }
