@@ -283,5 +283,182 @@
 // }
 
 
-    
+
 // }
+
+
+// console.log(typeof Object);
+// console.log(Object);
+// console.dir(Object);
+// // console.log(typeof Object.prototype);
+// // console.dir(Object.prototype);
+// console.log(Object.__proto__);
+// console.log(typeof Object.__proto__);
+// console.dir(Object.__proto__);
+// console.dir(Object.prototype.__proto__);
+// console.log(Object.prototype.__proto__);
+// console.log(Object.__proto__.prototype);
+// console.dir(Object.__proto__.prototype);
+
+
+// class Samurai {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     hello() {
+//         alert(this.name);
+//     }
+
+// }
+// let shogun = new Samurai("Dimyich");
+
+// // console.dir(shogun.__proto__.__proto__);
+// // console.dir(shogun.__proto__.constructor.__proto__);
+// // console.log(shogun.__proto__.__proto__.__proto__);
+// // console.log(typeof shogun.__proto__.prototype);
+// console.log(typeof Samurai.prototype);
+// console.log(typeof Samurai.__proto__.prototype);
+// console.log(Samurai.__proto__);
+// console.dir(Samurai.__proto__);
+// console.dir(typeof Samurai.__proto__.__proto__.__proto__);
+// console.dir(Samurai.__proto__.__proto__)
+
+// console.dir(Samurai);
+// console.dir(shogun);
+
+
+
+// class Product {
+//     constructor ({name, price, quantity,} = {}){
+//         this.name = name;
+//         this.prrice = price;
+//         this.quantity = quantity;
+//     }
+//      get amount(){
+//         return this.prrice*this.quantity;
+
+//     }
+// }
+
+// const product = new Product({name: 'bear',price: 1000,quantity:25});
+// console.log(product);
+// console.log(product.amount());
+
+
+// class Product{
+
+// constructor ({id, name, price} = {}) {
+//     this.id = id;
+//     this.name = name;
+//     this.price = price;
+//     }
+// get getPriceWithTax(){
+//     return this.price + this.price * 0.2;
+// }
+// get getPriceWithDiscount() {
+//     return this.price - this.price * 0.1;
+// }
+
+// }
+
+// const product = new Product({id:1, name:'car', price:1000});
+// const product2 = new Product({id:2, name:'box', price:100});
+// const product3 = new Product({id:3, name:'bitcoin', price:30000});
+
+
+// class Basket extends Product {
+//     products = [];
+//     total = 0
+//     set addProduct(product){
+//         products.push(product);
+//     }
+//     get getTotalPriceWithTax(){
+//         for (i = 0;i<this.products.length ;i++){
+//             total += 1 ;
+//         }
+//         return total * this.price.getPriceWithTax();
+//     }
+//     get getTotalPriceWithDiscount(){
+//         for (i = 0;i<this.products.length ;i++){
+//             total += 1 ;
+//         }
+//         return total * this.price.getPriceWithDiscount();
+//     }
+
+// }
+
+
+// console.dir(Basket);
+// console.dir(Product);
+// console.log(product);
+
+
+
+// const arr = [1, 2, 3];
+
+// const newArr = arr.map(e => e * 2);
+// console.log(newArr)
+
+
+// class Basket {
+//     products = [];
+//     addProduct(product){
+//         this.products.push(product);
+//     }
+//     get totalPriceWithTax(){
+//         return this.products.reduce((total, product) => total * product.getPriceWithTax, 0);
+//     }
+//     get totalPriceWithDiscount(){
+//         return this.products.reduce((total, product) => total * product.getPriceWithDiscount, 0);
+//     }
+
+// }
+// const basket = new Basket();
+// console.log(basket);
+// basket.addProduct(product1);
+// basket.addProduct(product2);
+// basket.addProduct(product3);
+
+// console.log(basket.totalPriceWithTax);
+// console.log(basket.totalPriceWithDiscount);
+
+// class Warriors {
+//     constructor({ name, health, xp, wearon } = {}) {
+//         this.name = name;
+//         this.health = health;
+//         this.xp = xp;
+//         this._weapon = '';
+//     }
+//     set wearon(value) {
+//         this._weapon = value;
+//     }
+//     get wearon() {
+//         return this_weapon;
+//     }
+//     gainXp(amout) {
+//         console.log(`${this.name} отримує ${amout} досвіду`);
+//         this.xp += amout;
+//     }
+// }
+
+// class Mage {
+//     constructor({ name, health, xp, spels } = {}) {
+//         this.name = name;
+//         this.health = health;
+//         this.xp = xp;
+//         this._spels = [];
+//     }
+//     get spels() {
+//         return this._spels;
+//     }
+//     set spels(value) {
+//         this._spels.push(value);
+//     }
+//     gainXp(amout) {
+//         console.log(`${this.name} отримує ${amout} досвіду`);
+//         this.xp += amout;
+//     }
+// }
+
+
+
