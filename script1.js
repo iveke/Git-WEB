@@ -461,4 +461,117 @@
 // }
 
 
+//  1)
+// class Vehicle {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     stop() {
+//         console.log(`транспортний засіб ${this.name} зупинився`);
+//     }
+//     start() {
+//         console.log(`транспортний засіб ${this.name} поїхав`);
+//     }
+// }
+
+// class Car extends Vehicle {
+//     constructor({ name, numDoors }) {
+//         super(name);
+//         this.numDoors = numDoors;
+
+//     }
+
+//     horn() {
+//         console.log('пі віу');
+//     }
+// }
+// class Motorcycle extends Vehicle {
+//     constructor({ name, numWheels }) {
+//         super(name);
+//         this.numWheels = numWheels;
+//     }
+
+//     wheelie() {
+//         console.log(` ${this.name} зробив відкос`);
+//     }
+// }
+// class Boat extends Vehicle {
+//     constructor({ name, lenght }) {
+//         super(name);
+//         this.lenght = lenght;
+//     }
+
+//     anchor() {
+//         console.log(`Човен ${this.name} зупинився в цій точці`);
+//     }
+
+// }
+
+// const car = new Car({ name: 'Audi', numDoors: 4 });
+// const motorcycle = new Motorcycle({ name: 'Yamaha', numWheels: 2 });
+// const boat = new Boat({ name: 'Manitou', lenght: 20 });
+// console.log(car);
+// console.log(motorcycle);
+// console.log(boat);
+// car.stop();
+// car.start();
+// boat.anchor();
+// motorcycle.wheelie();
+// car.horn();
+// boat.stop();
+// motorcycle.start();
+
+
+//     2)
+// class User {
+
+//     constructor(name, email) {
+//         this.name = name;
+//         this.email = email;
+//     }
+
+//     spreadOut() {
+//         console.log(`${this.name} розлогінився`);
+//     }
+//     logIn() {
+//         console.log(`${this.name} залогінився`);
+//     }
+
+// }
+// class Admin extends User {
+//     constructor({ name, email, privileges }) {
+
+//         super(name, email);
+//         this.privileges = privileges;
+
+//     }
+//     delete(name) {
+//         console.log(`${name} був видаленний`);
+//     }
+//     levelUp(name) {
+//         console.log(`${name} стає адміном`)
+//     }
+
+// }
+
+// class Moderator extends User {
+//     constructor({ name, email, deleteMassage }) {
+//         super(name, email);
+//         this.opportunityDeleteMassage = deleteMassage;
+//     }
+//     deleteMassage(id) {
+//         console.log(`коментар ${id} видалено`);
+//     }
+
+// }
+
+
+// const moderator = new Moderator({ name: 'Andrew', email: 'andrew@gmail.com', deleteMassage: true });
+// const admin = new Admin({ name: 'Ivan', email: 'ivan@gmail.com', privileges: true });
+// console.log(admin);
+// admin.logIn();
+// admin.delete('Vanya');
+// admin.levelUp('Vanya');
+// moderator.deleteMassage(21);
+
 
