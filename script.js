@@ -399,4 +399,97 @@
 
 
 
-// Practice
+// Practice   class
+
+
+// const product = {
+//     price: 5000,
+//     showPrice() {
+//         console.log(this.price)
+//     },
+// }
+// product.showPrice();
+
+//--------------------
+
+// Виправте помилки, щоб код працював
+// const product = {
+//     price: 5000,
+//     showPrice() {
+//         console.log(this.price)
+//     },
+// }
+
+// function callAction(action) {
+
+
+// }
+// callAction(product.showPrice);
+
+
+// const name = 'Andrew';
+
+// const obj = {
+//     name
+// }
+
+// console.log(obj)
+
+// const fnA = function () {
+//     console.log('Hi');
+// }
+// fnA()
+
+// const fnB = fnA;
+
+// console.log(fnA === fnB)
+// console.log(fnA);
+// в змінну fnB зберігають вказівник на комірку пам'яті де лежить ця функція
+// змінна fnA також зберігає вказівник на комірку пам'яті де лежить ця функція
+// коли ми передаємо функцію ми передаємо не копію а посилання
+
+//---------------------
+//контекст функції
+
+// const user = {
+//     fnA() {
+//         console.log(this);
+//     }
+// }
+
+// user.fnA();//контекст об'єкту
+
+// // function fnB() {
+// //     console.log(this);
+// // }
+
+// const fnB = user.fnA;
+// console.log(fnB);
+// console.log(fnB === user.fnA);
+// fnB();
+
+//виклик без контексту в строгому режимі = undefined
+//без строгого = window
+
+// де і як була оголошена функція не має ніякого впливу на контекст
+// визначається контекст в момент виклику функції(якщо він не прив'язаний явно)
+
+//---------------------
+//як метод об'єкту але оголошена як зовнішня функція
+
+// const showName = function () {
+//     console.log('this', this);
+//     console.log('this.name', this.name);
+// }
+
+// showName();
+
+// const user = {
+//     name: 'Andrew',
+// }
+
+// user.showUserName = showName;
+
+// user.showUserName();//тут визначився контекст
+
+//-------------------

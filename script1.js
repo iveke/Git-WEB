@@ -574,4 +574,291 @@
 // admin.levelUp('Vanya');
 // moderator.deleteMassage(21);
 
+//  HomeWork
 
+// const place = document.querySelector('.place');
+// const pitch = document.querySelector('.pitch');
+// const ball = document.querySelector('.ball');
+// const cordinateTarget = {};
+// const cordinateCenterBall = {};
+
+
+// // let ballNewTop = ball.offsetTop + (cordinateCenterBall.Y - ball.offsetTop);
+// // let ballNewLeft = ball.offsetLeft + (cordinateCenterBall.X - ball.offsetLeft);
+// // const ballCordinate = ball.getBoundingClientRect();
+
+// pitch.addEventListener('click', function (event) {
+
+//     const coordsItem = {};
+
+//     cordinateTarget.X = event.clientX;
+//     cordinateTarget.Y = event.clientY;
+
+//     cordinateCenterBall.X = cordinateTarget.X - (ball.offsetWidth / 2);
+//     cordinateCenterBall.Y = cordinateTarget.Y - (ball.offsetHeight / 2);
+
+//     coordsItem.X = cordinateTarget.X - ball.offsetWidth;
+//     coordsItem.Y = cordinateTarget.Y - ball.offsetHeight;
+
+//     let ballSize = {
+//         width: ball.offsetWidth,
+//         height: ball.offsetHeight
+//     }
+//     let pitchSize = {
+//         left: pitch.getBoundingClientRect().left,
+//         right: pitch.getBoundingClientRect().left + pitch.offsetWidth,
+//         top: pitch.getBoundingClientRect().top,
+//         bottom: pitch.getBoundingClientRect().top + pitch.offsetHeight
+
+//     }
+
+//     ballMove();
+
+//     function ballMove() {
+
+//         // console.log(coordsItem.X, coordsItem.Y);
+//         // console.log(ballSize.width, ballSize.height);
+//         // console.log(pitchSize.right, pitchSize.top);
+//         // console.log(pitchSize.left, pitchSize.bottom);
+
+
+//         if (coordsItem.X + ballSize.width <= pitchSize.right &&
+//             coordsItem.X >= pitchSize.left) {
+//             ball.style.left = ball.offsetLeft + (cordinateCenterBall.X - ball.offsetLeft) + "px";
+//         }
+//         // else {
+//         //     if (coordsItem.X + ballSize.width > pitchSize.right) {
+//         //         ball.style.left = (pitchSize.right - ballSize.width) + "px";
+//         //     }
+//         //     if (coordsItem.X < pitchSize.left) {
+//         //         ball.style.left = pitchSize.left + "px";
+//         //     }
+//         // }
+//         if (coordsItem.Y + ballSize.height <= pitchSize.bottom &&
+//             coordsItem.Y >= pitchSize.top) {
+//             ball.style.top = ball.offsetTop + (cordinateCenterBall.Y - ball.offsetTop) + "px";
+//         }
+//         // else {
+//         //     if (coordsItem.Y + ballSize.height > pitchSize.top) {
+//         //         ball.style.top = (pitchSize.top - ballSize.height) + "px";
+//         //     }
+//         //     if (coordsItem.Y < pitchSize.bottom) {
+//         //         ball.style.top = pitchSize.bottom + "px";
+//         //     }
+//         // }
+
+
+
+//     }
+
+// })
+
+
+
+
+
+// // -----------------------------------------------------------
+// /*
+// const gragField = document.querySelector('.drag-field');
+// const gragItem = document.querySelector('.drag-field__item');
+
+// gragItem.addEventListener("mousedown", function (event) {
+
+//     let coordsItemX = event.clientX - gragItem.getBoundingClientRect().left;
+//     let coordsItemY = event.clientY - gragItem.getBoundingClientRect().top;
+
+//     let gragItemSizes = {
+//         width: gragItem.offsetWidth,
+//         height: gragItem.offsetHeight
+//     }
+//     let gragFieldSizes = {
+//         left: gragField.getBoundingClientRect().left + scrollX,
+//         top: gragField.getBoundingClientRect().top + scrollY,
+//         right: gragField.getBoundingClientRect().left + scrollX + gragField.offsetWidth,
+//         bottom: gragField.getBoundingClientRect().top + scrollY + gragField.offsetHeight
+//     }
+
+//     gragItem.style.position = 'absolute';
+//     gragItem.style.zIndex = 1000;
+//     document.body.append(gragItem);
+
+//     moveItem(event.pageX, event.pageY);
+
+//     function moveItem(pageX, pageY) {
+//         let currentX = pageX - coordsItemX;
+//         let currentY = pageY - coordsItemY;
+
+//         if (
+//             currentX + gragItemSizes.width <= gragFieldSizes.right &&
+//             currentX >= gragFieldSizes.left
+//         ) {
+//             gragItem.style.left = `${currentX}px`;
+//         } else {
+//             if (currentX + gragItemSizes.width > gragFieldSizes.right) {
+//                 gragItem.style.left = `${gragFieldSizes.right - gragItemSizes.width}px`;
+//             }
+//             if (currentX < gragFieldSizes.left) {
+//                 gragItem.style.left = `${gragFieldSizes.left}px`;
+//             }
+//         }
+//         if (
+//             currentY + gragItemSizes.height <= gragFieldSizes.bottom &&
+//             currentY >= gragFieldSizes.top
+//         ) {
+//             gragItem.style.top = `${currentY}px`;
+//         } else {
+//             if (currentY + gragItemSizes.height > gragFieldSizes.bottom) {
+//                 gragItem.style.top = `${gragFieldSizes.bottom - gragItemSizes.height}px`;
+//             }
+//             if (currentY < gragFieldSizes.top) {
+//                 gragItem.style.top = `${gragFieldSizes.top}px`;
+//             }
+//         }
+//     }
+
+//     let currentDroppable = null;
+
+//     function onDragItem(event) {
+//         moveItem(event.pageX, event.pageY);
+
+//         gragItem.hidden = true;
+//         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+//         gragItem.hidden = false;
+
+//         if (!elemBelow) return;
+//         let droppableBelow = elemBelow.closest('.drag-field__point');
+
+//         if (currentDroppable !== droppableBelow) {
+//             if (currentDroppable) {
+//                 currentDroppable.classList.remove('_active');
+//                 gragItem.classList.remove('_active');
+//             }
+//             currentDroppable = droppableBelow;
+//             if (currentDroppable) {
+//                 currentDroppable.classList.add('_active');
+//                 gragItem.classList.add('_active');
+//             }
+//         }
+//     }
+//     document.addEventListener('mousemove', onDragItem);
+
+//     document.addEventListener("mouseup", function (event) {
+//         document.removeEventListener('mousemove', onDragItem);
+//     }, { "once": true });
+// });
+// gragItem.addEventListener("dragstart", function (event) {
+//     event.preventDefault();
+// });
+// */
+
+
+// const place = document.querySelector('.place');
+// const pitch = document.querySelector('.pitch');
+// const ball = document.querySelector('.ball');
+
+// pitch.onclick = function (event) {
+//     let fieldCoords = this.getBoundingClientRect();
+
+//     let ballCoords = {
+//         top: event.clientY - fieldCoords.top - field.clientTop - ball.clientHeight / 2,
+//         left: event.clientX - fieldCoords.left - field.clientLeft - ball.clientWidth / 2
+//     };
+//     if (ballCoords.top < 0) ballCoords.top = 0;
+
+//     if (ballCoords.left < 0) ballCoords.left = 0;
+
+//     if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+//         ballCoords.left = field.clientWidth - ball.clientWidth;
+//     }
+
+//     if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+//         ballCoords.top = field.clientHeight - ball.clientHeight;
+//     }
+//     ball.style.left = ballCoords.left + 'px';
+//     ball.style.top = ballCoords.top + 'px';
+// }
+
+
+// const values = [
+//     {name:"HTML"},
+//     {name:"CSS"},
+//     {name:"JavaScript"},
+//     {name:"Node.js"},
+//     {name:"React"},
+//     {name:"Vue"},
+//     {name:"Next.js"},
+// ]
+
+// const refs = {
+//     listEl: document.querySelector(".js-list"),
+//     input: document.querySelector(".js-input"),
+//     addBtn: document.querySelector(".js-add")
+// }
+
+
+// refs.listEl.append(...createListItems(values));
+// refs.addBtn.addEventListener('click', onAddBtnClick);
+// refs.input.addEventListener('input', filter)
+
+// function filter(event){
+// const filter = event.currentTarget.value    ;
+// const filterArr = values.filter((e) => e.name.toLowerCase().includes(filter.toLowerCase()));
+// console.log(filterArr);
+// refs.listEl.innerHTML = '';
+// refs.listEl.append(...createListItems(filterArr));
+// }
+
+// function createListItems(values){
+//     return values.map((value => {
+//         const itemEl = document.createElement("li");
+//         itemEl.classList.add("lesson");
+//         itemEl.textContent = value.name;
+//         return itemEl;
+//     }))
+// }
+
+// function onAddBtnClick(event){
+//     const itemEl = document.createElement("li");
+//         itemEl.classList.add("lesson");
+//         itemEl.textContent = refs.input.value;
+//         refs.input.value = '';
+//         refs.listEl.append(itemEl);
+
+// }
+
+
+// const div = document.querySelectorAll("div");
+// const btn = document.querySelectorAll(".btn");
+
+// for (let button of btn) {
+//     button.addEventListener('click', clearDiv);
+// }
+
+// function clearDiv(e) {
+//     for (let elem of div) {
+//         elem.style.display = 'none';
+
+//     }
+// }
+
+// function getRandomHexColor() {
+//     return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')
+// }
+// console.log(getRandomHexColor());
+
+const input1 = document.querySelector('.input1');
+const input2 = document.querySelector('.input2');
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', changeValue);
+input1.addEventListener('input', currentValue);
+
+function changeValue(event) {
+    input2.value = `${inputValue}`;
+
+}
+
+function currentValue(event) {
+    const inputValue = event.currentTarget.value;
+    console.log(inputValue);
+}
